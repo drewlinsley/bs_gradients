@@ -46,4 +46,5 @@ echo "export PYTHONPATH='$PYTHONPATH:$(pwd)/tf-models/research/slim'" >> ~/.bash
 echo "export BRAINIO_HOME='${current_path}projects/prj_brainscore/hackaton2021/.brainio'" >> ~/.bashrc
 echo "export RESULTCACHING_DISABLE='1'" >> ~/.bashrc  
 echo "export CM_HOME='${current_path}projects/prj_brainscore/hackaton2021/.candidate_models'" >> ~/.bashrc
-
+pip install efficientnet
+pip install opencv-python
