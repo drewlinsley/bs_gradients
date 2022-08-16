@@ -8,7 +8,7 @@ from brainscore.benchmarks.public_benchmarks import MajajHongITPublicBenchmark
 benchmark = MajajHongITPublicBenchmark()
 
 
-def batch_predict(model, inputs, batch_size=batch_size):
+def batch_predict(model, inputs, batch_size):
   activations = []
   
   for batch_x in tf.data.Dataset.from_tensor_slices(inputs).batch(batch_size):
