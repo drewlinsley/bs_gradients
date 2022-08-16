@@ -14,8 +14,9 @@ import xarray as xr
 import os
 
 
-parent = '/cifs/data/tserre_lrs/projects/prj_brainscore/hackaton2021/.brainio/'
-parent_imgs ='/cifs/data/tserre_lrs/projects/prj_brainscore/hackaton2021/.brainio/image_dicarlo_hvm-private/'
+path = "/media/data_cifs"
+parent = os.path.join(path, 'projects/prj_brainscore/hackaton2021/.brainio/')
+parent_imgs =os.path.join(path, 'projects/prj_brainscore/hackaton2021/.brainio/image_dicarlo_hvm-private/')
 train_ids = 'data/train_ids.npy'
 test_ids = 'data/test_ids.npy'
 pvtdf = pd.read_csv(os.path.join(parent_imgs,'image_dicarlo_hvm-private.csv'))
@@ -41,7 +42,7 @@ images_paths = [benchmark._assembly.stimulus_set.get_image(img_id) for img_id in
 
 
 public_masks = xr.open_dataset('masks_xr.nc')
-csvf = '/cifs/data/tserre_lrs/projects/prj_brainscore/hackaton2021/.brainio/image_dicarlo_hvm-public/image_dicarlo_hvm-public.csv'
+csvf = os.path.join(path, 'projects/prj_brainscore/hackaton2021/.brainio/image_dicarlo_hvm-public/image_dicarlo_hvm-public.csv')
 public = pd.read_csv(csvf)
 
 preprocess = tf.keras.applications.vgg16.preprocess_input
